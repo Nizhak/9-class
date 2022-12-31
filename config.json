@@ -1,0 +1,17 @@
+{
+  "config": [
+
+  ],
+  "students": [
+    {
+      "id": 1,
+      "name": "Егор Воронин",
+      "src": "/123123",
+      "alt": "",
+      "about": "Hello world!!!"
+    }
+  ],
+  "teacher": [
+
+  ]
+}
