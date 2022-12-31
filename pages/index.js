@@ -1,7 +1,9 @@
 import Head from 'next/head'
 import styles from '../styles/index.module.css'
-
-
+import Image from "next/image";
+import oneImg from "../assets/img/one.png"
+import twoImg from "../assets/img/Олеся.png"
+import threeImg from "../assets/img/two.jpg"
 
 export default function Home() {
   return (
@@ -17,7 +19,7 @@ export default function Home() {
                   <h1>Самый 9 Класс</h1>
                   <h1>Самой 9 Школы</h1>
               </div>
-              <img src="/assets/img/one.png" alt="illustration" />
+              <Image className={styles.img} src={oneImg} alt="illustration" />
           </div>
 
           <div className={styles.two}>
@@ -27,16 +29,16 @@ export default function Home() {
                       <h3>Лифанова Олеся Владимировна</h3>
                       <p>Описание:</p>
                   </div>
-                  <img className={styles.twoImg} src="/assets/img/Олеся.png" alt="Фото Олеси Владимировны" />
+                  <Image className={styles.twoImg} src={twoImg} alt="Фото Олеси Владимировны" />
               </div>
           </div>
 
           <div className={styles.three}>
-              <img src="/assets/img/two.jpg" alt="Фото класса" />
-                  <div>
-                      <h3>О классе:</h3>
-                      <p>Описание:</p>
-                  </div>
+              <Image className={styles.img} src={threeImg} alt="Фото класса" />
+              <div>
+                  <h3>О классе:</h3>
+                  <p>Описание:</p>
+              </div>
           </div>
       </>
   )

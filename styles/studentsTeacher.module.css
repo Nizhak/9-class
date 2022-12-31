@@ -8,8 +8,9 @@
     align-items: center;
     height: calc(100vh - var(--header-height));
 }
-.one img {
+.one .img {
     width: 60%;
+    height: auto;
     filter: var(--img-filter);
     transition: brightness .8s;
 }

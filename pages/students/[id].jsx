@@ -1,5 +1,6 @@
 import styles from "../../styles/about.module.css"
 import Head from "next/head";
+import Image from "next/image";
 
 export async function getServerSideProps(context) {
     const response = await fetch(`${process.env.API_HOST}/students/${context.query.id}`);
@@ -24,7 +25,7 @@ const About = ({ data }) => {
                 <title>9Б Класс - {data.name}</title>
             </Head>
             <div className={styles.main}>
-                <img src={data.src} alt={data.alt} />
+                <Image className={styles.img} src={data.src} alt={data.alt} />
                 <div className={styles.text}>
                     <h1>{data.name}</h1>
                     <p>{data.about}</p>

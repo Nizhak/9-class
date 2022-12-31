@@ -3,11 +3,12 @@
     display: flex;
     flex-wrap: wrap;
 }
-.main img {
+.main .img {
     height: 95%;
     border-radius: .75rem;
     margin-right: 2rem;
     aspect-ratio: 3 / 4;
+    width: auto;
 }
 
 @media (max-width: 768px) {

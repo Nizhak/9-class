@@ -1,6 +1,8 @@
 import Card from "../../companents/UI/Card/Card";
 import Head from "next/head";
 import styles from "../../styles/studentsTeacher.module.css"
+import oneImg from "../../assets/img/one.png";
+import Image from "next/image";
 
 export async function getServerSideProps() {
     const response = await fetch(`${process.env.API_HOST}/students`);
@@ -29,7 +31,7 @@ const Students = ({ data }) => {
                     <h1>Самый 9 Класс</h1>
                     <h1>Самой 9 Школы</h1>
                 </div>
-                <img src="/assets/img/one.png" alt="illustration" />
+                <Image className={styles.img} src={oneImg} alt="illustration" />
             </div>
             <div className={styles.two}>
                 <h2>Ученики:</h2>
