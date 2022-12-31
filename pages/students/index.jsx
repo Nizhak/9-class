@@ -31,7 +31,7 @@ const Students = ({ data }) => {
                     <h1>Самый 9 Класс</h1>
                     <h1>Самой 9 Школы</h1>
                 </div>
-                <Image className={styles.img} src={oneImg} alt="illustration" />
+                <Image placeholder="blur" className={styles.img} src={oneImg} alt="illustration" />
             </div>
             <div className={styles.two}>
                 <h2>Ученики:</h2>

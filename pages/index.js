@@ -19,7 +19,7 @@ export default function Home() {
                   <h1>Самый 9 Класс</h1>
                   <h1>Самой 9 Школы</h1>
               </div>
-              <Image className={styles.img} src={oneImg} alt="illustration" />
+              <Image placeholder="blur" className={styles.img} src={oneImg} alt="illustration" />
           </div>
 
           <div className={styles.two}>
@@ -29,12 +29,12 @@ export default function Home() {
                       <h3>Лифанова Олеся Владимировна</h3>
                       <p>Описание:</p>
                   </div>
-                  <Image className={styles.twoImg} src={twoImg} alt="Фото Олеси Владимировны" />
+                  <Image placeholder="blur" className={styles.twoImg} src={twoImg} alt="Фото Олеси Владимировны" />
               </div>
           </div>
 
           <div className={styles.three}>
-              <Image className={styles.img} src={threeImg} alt="Фото класса" />
+              <Image placeholder="blur" className={styles.img} src={threeImg} alt="Фото класса" />
               <div>
                   <h3>О классе:</h3>
                   <p>Описание:</p>

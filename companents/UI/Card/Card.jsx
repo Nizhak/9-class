@@ -11,6 +11,7 @@ const Card = ({src, name, path}) => {
                     <div className="card-body">
                         <div className={styles.img}>
                             <Image
+                                placeholder="blur"
                                 className={styles.img}
                                 src={src} alt={name}
                                 layout='fill'

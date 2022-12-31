@@ -4,6 +4,7 @@ export default function Document() {
   return (
     <Html lang="ru">
       <Head>
+          <meta name="color-scheme" content="light dark" />
           <meta charSet="UTF-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
           <link rel="preconnect" href="https://fonts.googleapis.com"/>

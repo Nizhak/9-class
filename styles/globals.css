@@ -1,7 +1,7 @@
 :root {
   --body-bg: #EAF3FA;
-  --body-color: #000;
-  --body-color-hover: #222;
+  --body-color: #111111;
+  --body-color-hover: #373737;
 
 
   --header-bg: rgba(234, 243, 250, .25);
@@ -28,8 +28,8 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --body-bg: #191919;
-    --body-color: #fff;
-
+    --body-color: #EAF3FA;
+    --body-color-hover: #c1c7ce;
 
     --header-bg: rgba(25, 25, 25, .35);
     --header-color: var(--body-color);

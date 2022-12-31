@@ -25,7 +25,7 @@ const About = ({ data }) => {
                 <title>9Б Класс - {data.name}</title>
             </Head>
             <div className={styles.main}>
-                <Image className={styles.img} src={data.src} alt={data.alt} />
+                <Image placeholder="blur" className={styles.img} src={data.src} alt={data.alt} />
                 <div className={styles.text}>
                     <h1>{data.name}</h1>
                     <p>{data.about}</p>
