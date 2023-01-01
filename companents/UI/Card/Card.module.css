@@ -13,7 +13,7 @@
     --bs-card-bg: var(--card-bg)!important;
     border: none!important;
     transition: background-color .8s;
-    aspect-ratio: 1 / 1.7;
+    aspect-ratio: 1 / 1.5;
     text-decoration: none!important;
 }
 .img {

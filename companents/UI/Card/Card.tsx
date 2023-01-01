@@ -1,9 +1,20 @@
-import React from 'react';
+import React, {FC} from 'react';
 import Link from "next/link";
 import Image from 'next/image'
 import styles from './Card.module.css'
 
-const Card = ({src, name, path}) => {
+type dataProps = {
+    src: string,
+    name: string,
+    path: string
+}
+
+const Card:FC<dataProps> = ({src, name, path}) => {
+    if (src === "") {
+        src = "/assets/img/placeholder.jpg"
+    } else {
+
+    }
     return (
         <div className={"col " + styles.col}>
             <Link href={path}>
@@ -11,7 +22,6 @@ const Card = ({src, name, path}) => {
                     <div className="card-body">
                         <div className={styles.img}>
                             <Image
-                                placeholder="blur"
                                 className={styles.img}
                                 src={src} alt={name}
                                 layout='fill'

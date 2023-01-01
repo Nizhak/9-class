@@ -1,6 +1,12 @@
 import styles from "../../styles/about.module.css"
 import Head from "next/head";
 import Image from "next/image";
+import {cardType} from "../../types";
+import {FC} from "react";
+
+type aboutInfoProps = {
+    data: cardType,
+}
 
 export async function getServerSideProps(context) {
     const response = await fetch(`${process.env.API_HOST}/teacher/${context.query.id}`);
@@ -17,17 +23,31 @@ export async function getServerSideProps(context) {
     }
 }
 
-const About = ({ data }) => {
+const About:FC<aboutInfoProps> = ({ data }) => {
+    const title = `9Б Класс - ${data.name}`
+    let theTeacher: JSX.Element
+
+    if (data.theTeacher) {
+        theTeacher = <h5>Учитель: {data.teacher}</h5>
+    }
+
     return (
         <>
             <Head>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-                <title>9Б Класс - {data.name}</title>
+                <title>{title}</title>
             </Head>
+            <style jsx global>{`
+              header {
+                position: relative;
+                backdrop-filter: none
+              }
+            `}</style>
             <div className={styles.main}>
-                <Image placeholder="blur" className={styles.img} src={data.src} alt={data.alt} />
+                <Image className={styles.img} src={data.src} alt={data.alt} />
                 <div className={styles.text}>
                     <h1>{data.name}</h1>
+                    {theTeacher}
                     <p>{data.about}</p>
                 </div>
             </div>

@@ -1,6 +1,6 @@
 import Card from "../../companents/UI/Card/Card";
 import Head from "next/head";
-import styles from "../../styles/studentsTeacher.module.css"
+import styles from "../../styles/studentsTeacher.module.css";
 import oneImg from "../../assets/img/one.png";
 import Image from "next/image";
 

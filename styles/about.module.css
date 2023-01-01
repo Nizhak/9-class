@@ -3,18 +3,27 @@
     display: flex;
     flex-wrap: wrap;
 }
-.main .img {
+.img {
     height: 95%;
+    width: auto;
     border-radius: .75rem;
     margin-right: 2rem;
     aspect-ratio: 3 / 4;
-    width: auto;
+    position: relative;
+}
+.img > * {
+    border-radius: .75rem;
 }
 
 @media (max-width: 768px) {
-    .main img {
+    .main {
+        justify-content: center;
+    }
+    .img {
         order: 0;
-        width: 100%;
+        height: auto;
+        aspect-ratio: 3 / 4;
+        width: 50%;
         margin-bottom: .5rem;
     }
     .text {
