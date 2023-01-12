@@ -15,6 +15,13 @@
     transition: brightness .8s;
 }
 
+.notFound {
+    text-align: center;
+    width: 100%;
+    color: #db4847;
+    padding: 5rem;
+}
+
 .two h2 {
     margin-bottom: 1rem;
 }

@@ -111,7 +111,7 @@ main {
 footer {
   background: var(--footer-bg);
   color: var(--footer-color);
-  padding: 0.5rem;
+  padding: 0.5rem 0.5rem .75rem;
   width: 100%;
 }
 footer .container {
@@ -135,6 +135,9 @@ footer a {
 footer a:hover {
   color: var(--footer-color-hover);
 }
+footer p {
+  margin: .25rem 0 0;
+}
 
 @media (max-width: 768px) {
   header a {
@@ -144,7 +147,7 @@ footer a:hover {
   footer {
     font-size: 14px;
   }
-  footer > .container > h3 {
+  footer > .container > .name {
     order: 1;
     width: 100%;
     text-align: center;
@@ -154,7 +157,16 @@ footer a:hover {
   footer > .container > nav, footer > .container > div {
     order: 2;
   }
+  footer > .container > div {
+    text-align: end;
+  }
+  footer > .container > nav {
+    text-align: start;
+  }
   footer h4 {
     font-size: 1.2em;
+  }
+  footer p {
+    font-size: .6em;
   }
 }

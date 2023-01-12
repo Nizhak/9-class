@@ -5,9 +5,10 @@ const MyFooter = () => {
     return (
         <footer>
             <div className="container">
-                <h3>
-                    9Б Класс
-                </h3>
+                <div className="name">
+                    <h3>9Б Класс</h3>
+                    <p className="order-5">© Е. А. Воронин, 2022-2023</p>
+                </div>
                 <nav>
                     <h4>Навигация:</h4>
                     <ul>

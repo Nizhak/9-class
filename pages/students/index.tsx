@@ -3,23 +3,28 @@ import Head from "next/head";
 import styles from "../../styles/studentsTeacher.module.css";
 import oneImg from "../../assets/img/one.png";
 import Image from "next/image";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import Loader from "../../companents/UI/Loader/loader";
 
-export async function getServerSideProps() {
-    const response = await fetch(`${process.env.API_HOST}/students`);
-    if (response.status === 404) {
-        return {
-            notFound: true,
-        }
-    }
-    const data = await response.json();
-    return {
-        props: {
-            data
-        },
-    }
-}
+const Students = () => {
 
-const Students = ({ data }) => {
+    const [isLoading, setLoaded]:any = useState(false)
+    const [data, setData]:any = useState()
+
+    useEffect( () => {
+        start()
+    },[])
+
+    const start = async () => {
+        setLoaded(true)
+        axios.get("/api/students").then(data => {
+            setData(data.data)
+            return data.data
+        })
+        setLoaded(false)
+    }
+
     return (
         <>
             <Head>
@@ -33,13 +38,20 @@ const Students = ({ data }) => {
                 </div>
                 <Image placeholder="blur" className={styles.img} src={oneImg} alt="illustration" />
             </div>
+
             <div className={styles.two}>
                 <h2>Ученики:</h2>
-                <div className="row row-cols-3 row-cols-lg-6 g-3">
-                    {data.map(({ id, name, src }) => (
-                        <Card key={id} name={name} src={src} path={`/students/${id}`}/>
-                    ))}
-                </div>
+                {
+                    isLoading
+                        ? <Loader />
+                        : data?.length
+                            ? <div className="row row-cols-3 row-cols-lg-6 g-3">
+                                {data.map(({ id, name, src }) =>
+                                    <Card key={id} src={src} name={name} path={`/students/${id}`} />
+                                )}
+                            </div>
+                            : <h2 className={styles.notFound}>Не найдено!!!</h2>
+                }
             </div>
         </>
     );

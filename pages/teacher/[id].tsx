@@ -27,7 +27,7 @@ const About:FC<aboutInfoProps> = ({ data }) => {
     const title = `9Б Класс - ${data.name}`
     let theTeacher: JSX.Element
 
-    if (data.theTeacher) {
+    if (data.teacher) {
         theTeacher = <h5>Учитель: {data.teacher}</h5>
     }
 

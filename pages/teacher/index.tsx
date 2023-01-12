@@ -1,25 +1,30 @@
 import Card from "../../companents/UI/Card/Card";
 import Head from "next/head";
-import styles from "../../styles/studentsTeacher.module.css"
+import styles from "../../styles/studentsTeacher.module.css";
 import oneImg from "../../assets/img/one.png";
 import Image from "next/image";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import Loader from "../../companents/UI/Loader/loader";
 
-export async function getServerSideProps() {
-    const response = await fetch(`${process.env.API_HOST}/teacher`);
-    if (response.status === 404) {
-        return {
-            notFound: true,
-        }
-    }
-    const data = await response.json();
-    return {
-        props: {
-            data
-        },
-    }
-}
+const Teacher = () => {
 
-const Students = ({ data }) => {
+    const [isLoading, setLoaded]:any = useState(false)
+    const [data, setData]:any = useState()
+
+    useEffect( () => {
+        start()
+    },[])
+
+    const start = async () => {
+        setLoaded(true)
+        axios.get("/api/teacher").then(data => {
+            setData(data.data)
+            return data.data
+        })
+        setLoaded(false)
+    }
+
     return (
         <>
             <Head>
@@ -33,16 +38,23 @@ const Students = ({ data }) => {
                 </div>
                 <Image placeholder="blur" className={styles.img} src={oneImg} alt="illustration" />
             </div>
+
             <div className={styles.two}>
                 <h2>Учителя:</h2>
-                <div className="row row-cols-3 row-cols-lg-6 g-3">
-                    {data.map(({ id, name, src }) => (
-                        <Card key={id} name={name} src={src} path={`/teacher/${id}`}/>
-                    ))}
-                </div>
+                {
+                    isLoading
+                        ? <Loader />
+                        : data?.length
+                            ? <div className="row row-cols-3 row-cols-lg-6 g-3">
+                                {data.map(({ id, name, src }) =>
+                                    <Card key={id} src={src} name={name} path={`/teacher/${id}`} />
+                                )}
+                            </div>
+                            : <h2 className={styles.notFound}>Не найдено!!!</h2>
+                }
             </div>
         </>
     );
 };
 
-export default Students;
+export default Teacher;

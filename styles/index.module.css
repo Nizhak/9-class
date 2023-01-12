@@ -39,6 +39,7 @@
     background: var(--img-bg);
     width: 45%;
     height: auto;
+    transition: background-color .8s, border-color .8s;
 }
 
 .three {
@@ -50,6 +51,7 @@
     border-radius: 1rem;
     margin-right: 2rem;
     height: auto;
+    transition: background-color .8s, border-color .8s;
 }
 
 
@@ -104,8 +106,8 @@
         flex-wrap: wrap;
         justify-content: center;
     }
-    .three img {
-        width: 90%;
+    .three .img {
+        width: 90%!important;
         margin-bottom: .75rem;
         margin-right: 0;
     }
