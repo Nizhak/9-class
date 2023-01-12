@@ -18,7 +18,7 @@ const Students = () => {
 
     const start = async () => {
         setLoaded(true)
-        axios.get("/api/students").then(data => {
+        await axios.get("/api/students").then(data => {
             setData(data.data)
             return data.data
         })
